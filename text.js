@@ -51,15 +51,15 @@ function desencriptar(stringDesencriptada){
             stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
 
         }
-
     }
     return stringDesencriptada;
 }
 
-function btncopiar(){
-    diamante2.select();
-    navigator.clipboard.writeText(diamante2.value);
-    diamante2.value = "";
+document.querySelector(".btn-copiar").onclick = (e) => {
+    e.preventDefault();
+    const mensaje = document.querySelector(".diamante2");
+    navigator.clipboard.writeText(mensaje.value)
+    mensaje.value = "";
     alert("Texto Copiado");
 }
 
